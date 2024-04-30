@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://615eieowxf4v"]
+
+[ext_resource type="Script" path="res://LabelSetter.cs" id="1_3nr3f"]
+
+[node name="StatEntry" type="MarginContainer" node_paths=PackedStringArray("label")]
+script = ExtResource("1_3nr3f")
+labelText = "Stat"
+label = NodePath("HBoxContainer/Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "stat
+"

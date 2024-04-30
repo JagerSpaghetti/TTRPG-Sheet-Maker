@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5aqinb6t0bsv"]
+
+[ext_resource type="Script" path="res://LabelSetter.cs" id="1_8qv88"]
+[ext_resource type="Script" path="res://FillList.cs" id="1_p3c0d"]
+[ext_resource type="PackedScene" uid="uid://615eieowxf4v" path="res://stat_entry.tscn" id="1_ymgv8"]
+
+[node name="FillList" type="MarginContainer" node_paths=PackedStringArray("entryContainer")]
+script = ExtResource("1_p3c0d")
+entryScene = ExtResource("1_ymgv8")
+entryContainer = NodePath("VBoxContainer2/VBoxContainer")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label Setter" type="Node" parent="." node_paths=PackedStringArray("label")]
+script = ExtResource("1_8qv88")
+label = NodePath("../VBoxContainer2/Label")

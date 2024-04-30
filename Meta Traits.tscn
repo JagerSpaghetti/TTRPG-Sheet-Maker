@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b04dyy6wd50ej"]
+
+[ext_resource type="Script" path="res://LabelSetter.cs" id="1_qqpn0"]
+
+[node name="MetaTrait" type="MarginContainer" node_paths=PackedStringArray("label")]
+offset_right = 400.0
+offset_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+script = ExtResource("1_qqpn0")
+label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="EditableTrait" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter Here..."
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Placeholder"

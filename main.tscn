@@ -1,0 +1,153 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccpp5fcmho8yp"]
+
+[ext_resource type="PackedScene" uid="uid://b04dyy6wd50ej" path="res://Meta Traits.tscn" id="1_r5t6t"]
+[ext_resource type="PackedScene" uid="uid://5yjmv6k06lyi" path="res://AbilityScore.tscn" id="2_5kyia"]
+[ext_resource type="PackedScene" uid="uid://5clkvd0dopu2" path="res://single_stat.tscn" id="3_7ex0h"]
+[ext_resource type="PackedScene" uid="uid://c5aqinb6t0bsv" path="res://fill_list.tscn" id="4_6xeit"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Character Sheet" type="ScrollContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBOX" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Character Sheet"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MetaStats" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Character Name"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="MarginContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2/GridContainer" instance=ExtResource("1_r5t6t")]
+layout_mode = 2
+labelText = "Class & Level"
+
+[node name="MarginContainer2" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2/GridContainer" instance=ExtResource("1_r5t6t")]
+layout_mode = 2
+labelText = "Backround"
+
+[node name="MarginContainer3" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2/GridContainer" instance=ExtResource("1_r5t6t")]
+layout_mode = 2
+labelText = "Player Name"
+
+[node name="MarginContainer4" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2/GridContainer" instance=ExtResource("1_r5t6t")]
+layout_mode = 2
+labelText = "Race"
+
+[node name="MarginContainer5" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2/GridContainer" instance=ExtResource("1_r5t6t")]
+layout_mode = 2
+labelText = "Alignment"
+
+[node name="MarginContainer6" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/MetaStats/HBoxContainer/MarginContainer2/GridContainer" instance=ExtResource("1_r5t6t")]
+layout_mode = 2
+labelText = "Experiance Points"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX"]
+layout_mode = 2
+
+[node name="Ability Scores" type="MarginContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores"]
+layout_mode = 2
+
+[node name="StrengthAbilityScore" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores/VBoxContainer" instance=ExtResource("2_5kyia")]
+layout_mode = 2
+labelText = "Strength"
+
+[node name="DexterityAbilityScore" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores/VBoxContainer" instance=ExtResource("2_5kyia")]
+layout_mode = 2
+labelText = "Dexterity"
+
+[node name="ConstitutionAbilityScore" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores/VBoxContainer" instance=ExtResource("2_5kyia")]
+layout_mode = 2
+labelText = "Constitution"
+
+[node name="IntelligenceAbilityScore" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores/VBoxContainer" instance=ExtResource("2_5kyia")]
+layout_mode = 2
+labelText = "Intelligence"
+
+[node name="WisdomAbilityScore" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores/VBoxContainer" instance=ExtResource("2_5kyia")]
+layout_mode = 2
+labelText = "Wisdom"
+
+[node name="CharismaAbilityScore" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/Ability Scores/VBoxContainer" instance=ExtResource("2_5kyia")]
+layout_mode = 2
+labelText = "Charisma"
+
+[node name="SkillsAndThrows" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer"]
+layout_mode = 2
+
+[node name="SingleStat" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/SkillsAndThrows" instance=ExtResource("3_7ex0h")]
+layout_mode = 2
+labelText = "Inspiration"
+
+[node name="SingleStat2" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/SkillsAndThrows" instance=ExtResource("3_7ex0h")]
+layout_mode = 2
+labelText = "Proficency Bonus"
+
+[node name="FillList" parent="VBoxContainer/HBoxContainer/Character Sheet/VBOX/HBoxContainer/SkillsAndThrows" instance=ExtResource("4_6xeit")]
+layout_mode = 2
+labelText = "Saving Throws"
+entries = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+
+[node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2

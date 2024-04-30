@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://5clkvd0dopu2"]
+
+[ext_resource type="Script" path="res://LabelSetter.cs" id="1_vykof"]
+
+[node name="SingleStat" type="MarginContainer" node_paths=PackedStringArray("label")]
+script = ExtResource("1_vykof")
+label = NodePath("HBoxContainer/Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Single Stat"
